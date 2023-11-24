@@ -1,0 +1,57 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway-svc
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service-user-details
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+            - Header=user-name, codingwithdanny
+            - Method=POST, GET
+            - Query=id, \d+
+
+          filters:
+            - AddRequestHeader=calling-from, Postman
+            - AddResponseHeader=X-Powered-By, Spring gateway service
+            - MapRequestHeader=user-name, X-user-name
+        - id: user-service-user-dept
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+            - Header=user-name, codingwithdanny
+            - Method=POST, GET
+            - Query=deptId, \d+
+
+          filters:
+            - AddRequestHeader=calling-from, Postman
+            - AddResponseHeader=X-Powered-By, Spring gateway service
+            - MapRequestHeader=user-name, X-user-name
+
+
+        - id: org-service
+          uri: lb://org-service
+          predicates:
+            - Path=/org-service/**
+        - id: department-service
+          uri: lb://department-service
+          predicates:
+            - Path=/department/**
+
+
+
+    consul:
+      config:
+        enabled: false
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: false
+
+
