@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: local_pgdb
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: codingwithdanny
+      POSTGRES_USER: dockeruser
+      POSTGRES_PASSWORD: dockerpassword
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "5051:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: danny@javahabit.com
+      PGADMIN_DEFAULT_PASSWORD: danny
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    network_mode: bridge
+  #app:
+  #  image: 'docker_postgres_todo:latest'
+  #  build: .
+  #  ports:
+  #    - "8080:8080"
+  #  depends_on:
+  #    - postgres
+  #  environment:
+  #    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/codingwithdanny
+  #    SPRING_DATASOURCE_USERNAME: dockeruser
+  #    SPRING_DATASOURCE_PASSWORD: dockerpassword
+
+networks:
+  todo-network:
+    driver: bridge
+volumes:
+  local_pgdata:
+  pgadmin-data:

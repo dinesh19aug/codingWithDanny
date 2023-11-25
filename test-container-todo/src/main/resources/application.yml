@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /todo
+  port: 8080
+
+
+spring:
+  application:
+    name: todo
+  ### Datasource config
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: dockerpassword
+    username: dockeruser
+    url: jdbc:postgresql://localhost:5432/codingwithdanny
+  ### JPA config
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: true
+
