@@ -28,17 +28,12 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     network_mode: bridge
-  #app:
-  #  image: 'docker_postgres_todo:latest'
-  #  build: .
-  #  ports:
-  #    - "8080:8080"
-  #  depends_on:
-  #    - postgres
-  #  environment:
-  #    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/codingwithdanny
-  #    SPRING_DATASOURCE_USERNAME: dockeruser
-  #    SPRING_DATASOURCE_PASSWORD: dockerpassword
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 
 networks:
   todo-network:

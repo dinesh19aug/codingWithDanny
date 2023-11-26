@@ -39,7 +39,8 @@ class TodoControllerTest {
     }
 
     @AfterAll
-    static void afterAll() {
+    static void afterAll() throws InterruptedException {
+        Thread.sleep(5000);
         postgres.stop();
     }
 
