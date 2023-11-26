@@ -31,6 +31,10 @@ dependencies {
 	testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.7.0'
 	testImplementation group: 'org.springframework.security', name: 'spring-security-test', version: '6.2.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// TEST CONTAINER DEPENDENCIES
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation 'org.testcontainers:postgresql'
+
 }
 
 tasks.named('test') {

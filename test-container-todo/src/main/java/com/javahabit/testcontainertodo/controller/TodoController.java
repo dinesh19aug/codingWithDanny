@@ -25,6 +25,11 @@ public class TodoController {
         return todoRepository.findById(id).orElse(null);
     }
 
+    @GetMapping("/q")
+    public List<Todo> getTodoByTitle(@RequestParam String title) {
+        return todoRepository.findTodoByTitle(title);
+    }
+
     @PostMapping(produces = "application/json", consumes = "application/json")
     public Todo createTodo(@RequestBody Todo todo) {
         return todoRepository.save(todo);
@@ -41,4 +46,3 @@ public class TodoController {
         todoRepository.deleteById(id);
     }
 }
-//docker run -p 5432:5432 -e POSTGRES_DB=codingwithdanny -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -d postgres
