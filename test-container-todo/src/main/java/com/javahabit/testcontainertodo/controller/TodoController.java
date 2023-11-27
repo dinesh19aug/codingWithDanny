@@ -18,27 +18,32 @@ public class TodoController {
 
     @GetMapping
     public List<Todo> getAllTodos() {
-        return service.getAllTodos();
+        List<Todo> todoList = service.getAllTodos();
+        return todoList;
     }
 
     @GetMapping("/{id}")
     public Todo getTodoById(@PathVariable Long id) {
-        return service.getTodoById(id);
+        Todo todo = service.getTodoById(id);
+        return todo;
     }
 
     @GetMapping("/q")
     public List<Todo> getTodoByTitle(@RequestParam String title) {
-        return service.getTodoByTitle(title);
+        List<Todo> todoByTitle = service.getTodoByTitle(title);
+        return todoByTitle;
     }
 
     @PostMapping(produces = "application/json", consumes = "application/json")
     public Todo createTodo(@RequestBody Todo todo) {
-        return service.createTodo(todo);
+        Todo result = service.createTodo(todo);
+        return result;
     }
 
     @PutMapping("/{id}")
     public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
-        return service.updateTodo(id, todo);
+        Todo updatedTodo = service.updateTodo(id, todo);
+        return updatedTodo;
     }
 
     @DeleteMapping("/{id}")

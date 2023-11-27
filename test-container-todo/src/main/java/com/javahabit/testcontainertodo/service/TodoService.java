@@ -1,6 +1,7 @@
 package com.javahabit.testcontainertodo.service;
 
 import com.javahabit.testcontainertodo.entities.Todo;
+import com.javahabit.testcontainertodo.messageQueue.RabbitMqProducer;
 import com.javahabit.testcontainertodo.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +10,10 @@ import java.util.List;
 @Service
 public class TodoService implements Iservice{
     private TodoRepository todoRepository;
-    TodoService(TodoRepository repository){
+    private RabbitMqProducer producer;
+    TodoService(TodoRepository repository, RabbitMqProducer producer){
         this.todoRepository = repository;
+        this.producer = producer;
     }
     @Override
     public List<Todo> getAllTodos() {
@@ -29,6 +32,7 @@ public class TodoService implements Iservice{
 
     @Override
     public Todo createTodo(Todo todo) {
+        producer.sendMessage("Creating Todo task: " + todo.getTitle());
         return todoRepository.save(todo);
     }
 

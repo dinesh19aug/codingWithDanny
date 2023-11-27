@@ -34,6 +34,12 @@ dependencies {
 	// TEST CONTAINER DEPENDENCIES
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.testcontainers:postgresql'
+	testImplementation "org.testcontainers:rabbitmq:1.19.3"
+	testImplementation 'org.testcontainers:mockserver'
+	testImplementation 'org.mock-server:mockserver-netty:5.15.0'
+	//RabbitMQ
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
 
 }
 

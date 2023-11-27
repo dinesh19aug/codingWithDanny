@@ -19,3 +19,21 @@ spring:
     generate-ddl: true
     show-sql: true
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+### private props
+rabbitMq:
+  exchange:
+    name: todo-exchange
+  queue:
+    name: todo-queue
+  routingKey:
+    name: todo-route-1
+
+post:
+  url: https://my-json-server.typicode.com
+
