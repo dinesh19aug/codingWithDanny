@@ -6,10 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.javahabit")
-public class D2cCommerceAppApplication {
+public class D2cCommerceApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(D2cCommerceAppApplication.class, args);
+        SpringApplication.run(D2cCommerceApp.class, args);
     }
 
 }
