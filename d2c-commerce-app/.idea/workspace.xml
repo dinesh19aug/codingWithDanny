@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc326f0d-377f-4c6f-9129-8efa37e8ff33" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/src/main/java/com/javahabit/childservice/ChildServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/src/main/java/com/javahabit/childservice/ObserverConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/src/main/java/com/javahabit/childservice/controller/ChildController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/child-service/src/test/java/com/javahabit/childservice/ChildServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/src/main/java/com/javahabit/grandchildservice/GrandchildServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/src/main/java/com/javahabit/grandchildservice/ObserverConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/src/main/java/com/javahabit/grandchildservice/controller/GrandchildController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/src/main/java/com/javahabit/grandchildservice/service/GcService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/grandchild-service/src/test/java/com/javahabit/grandchildservice/GrandchildServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/src/main/java/com/javahabit/parentservice/ObserverConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/src/main/java/com/javahabit/parentservice/ParentServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/src/main/java/com/javahabit/parentservice/controller/ParentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../distributed-tracing/parent-service/src/test/java/com/javahabit/parentservice/ParentServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/DepartmentServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/controller/DepartmentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/domain/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/error/DataNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/service/DepartmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/service/IService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/service/UserClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/vo/DeptResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/java/com/javahabit/departmentservice/vo/Error.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/department-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/src/main/java/com/javahabit/gateway/GatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gateway/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/java/com/javahabit/organizationservice/OrganizationServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/java/com/javahabit/organizationservice/controller/OrganizationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/java/com/javahabit/organizationservice/domain/Organization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/java/com/javahabit/organizationservice/service/IService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/java/com/javahabit/organizationservice/service/OrganizationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/java/com/javahabit/organizationservice/vo/OrgResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/organization-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/spring-gateway-demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/controller/UserServiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/error/DataNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/service/IService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/vo/Error.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/java/com/javahabit/userservice/vo/UserResponseVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-gateway-demo/user-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/TestContainerTodoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/config/RabbitMqConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/controller/TodoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/entities/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/entities/Todo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/messageQueue/RabbitMqProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/messageQueue/RabbitMqReciever.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/repository/TodoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/service/Iservice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/service/PostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/java/com/javahabit/testcontainertodo/service/TodoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/test/java/com/javahabit/testcontainertodo/TestContainerTodoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/test/java/com/javahabit/testcontainertodo/controller/PostControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/test/java/com/javahabit/testcontainertodo/controller/TodoControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-container-todo/src/test/resources/response.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/Sample1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/Sample2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/Sample3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/Sample4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/Sample5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/ThreadAppApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/previous/MyConcurrentThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/java/com/javahabit/previous/ThreadConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thread-app/src/test/java/com/javahabit/ThreadAppApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2bbozDdgBAt6qsNVOSDOTSA6uTv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/dinesharora/Desktop/dinesh/ytube/codingWithDanny/d2c-commerce-app/d2c-commerce-app",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="D2cCommerceAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="d2c-commerce-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.javahabit.d2ccommerceapp.D2cCommerceAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc326f0d-377f-4c6f-9129-8efa37e8ff33" name="Changes" comment="" />
+      <created>1706493400190</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706493400190</updated>
+      <workItem from="1706493401266" duration="32000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
