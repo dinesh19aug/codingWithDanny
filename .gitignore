@@ -1,1 +1,5 @@
 /d2c-commerce-app/.idea/
+/d2c-commerce-app/target/
+.idea/**
+.idea
+.DS_Store
