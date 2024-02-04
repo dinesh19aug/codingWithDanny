@@ -1,0 +1,11 @@
+
+#spring.application.name=bookstore
+#server.servlet.context-path=/bookstore
+
+spring:
+  application:
+    name: bookstore
+server:
+  servlet:
+    context-path: /bookstore
+  port: 9000
