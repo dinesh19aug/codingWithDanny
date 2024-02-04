@@ -1,11 +1,19 @@
-
-#spring.application.name=bookstore
-#server.servlet.context-path=/bookstore
-
-spring:
-  application:
-    name: bookstore
 server:
   servlet:
     context-path: /bookstore
   port: 9000
+##Spring
+spring:
+  application:
+    name: bookstore
+  ##Databse
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookstore
+    username: danny
+    password: danny
+    name: bookstore
+    driver-class-name: org.postgresql.Driver

@@ -1,4 +1,4 @@
-package com.javahabit.d2ccommerceapp.service;
+package com.javahabit.d2ccommerceapp.service.book;
 
 import com.javahabit.d2ccommerceapp.vo.Book;
 import org.springframework.stereotype.Component;
