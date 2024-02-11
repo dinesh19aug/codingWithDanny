@@ -9,11 +9,24 @@ spring:
   ##Databse
   jpa:
     show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:5432/bookstore
-    username: danny
-    password: danny
-    name: bookstore
-    driver-class-name: org.postgresql.Driver
+    bookstore:
+      url: jdbc:postgresql://localhost:5432/bookstore
+      username: danny
+      password: danny
+      name: bookstore
+      driver-class-name: org.postgresql.Driver
+    ff4j:
+      url: jdbc:postgresql://localhost:5432/ff4jdb
+      username: danny
+      password: danny
+      name: ff4jdb
+      driver-class-name: org.postgresql.Driver
+
+
+## FF4J DS
+
+

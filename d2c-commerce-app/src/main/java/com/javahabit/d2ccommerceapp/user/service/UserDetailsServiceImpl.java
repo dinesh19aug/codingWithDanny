@@ -1,7 +1,6 @@
-package com.javahabit.d2ccommerceapp.service.user;
+package com.javahabit.d2ccommerceapp.user.service;
 
-import com.javahabit.d2ccommerceapp.repository.UserRepository;
-import com.javahabit.d2ccommerceapp.vo.security.User;
+import com.javahabit.d2ccommerceapp.user.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserDetailsServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;

@@ -1,6 +1,8 @@
 package com.javahabit.d2ccommerceapp.controller;
 
 import com.javahabit.d2ccommerceapp.service.book.IService;
+import org.ff4j.FF4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,9 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping
 public class BookController {
+
+    @Autowired
+    FF4j ff4j;
     @Qualifier("book-service")
     IService bookService;
     public BookController(IService bookService) {
@@ -28,6 +33,7 @@ public class BookController {
         // (Collection<SimpleGrantedAuthority>)    SecurityContextHolder.getContext().getAuthentication().getAuthorities();
          List roles =  SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().map(u-> u.getAuthority().substring(5)).collect(Collectors.toList()) ;
          String userName =   SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println("Show books: " + ff4j.check("show-books"));
          return "book";
 
     }

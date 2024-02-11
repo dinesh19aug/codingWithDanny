@@ -1,6 +1,6 @@
 package com.javahabit.d2ccommerceapp.config;
 
-import com.javahabit.d2ccommerceapp.service.user.UserDetailsServiceImpl;
+import com.javahabit.d2ccommerceapp.user.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;

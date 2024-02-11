@@ -1,4 +1,4 @@
-package com.javahabit.d2ccommerceapp.service.user;
+package com.javahabit.d2ccommerceapp.user.service;
 
 import com.javahabit.d2ccommerceapp.vo.security.User;
 import org.springframework.security.core.GrantedAuthority;
