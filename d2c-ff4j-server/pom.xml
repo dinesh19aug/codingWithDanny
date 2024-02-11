@@ -69,11 +69,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.ff4j</groupId>
             <artifactId>ff4j-security-spring</artifactId>
             <version>${ff4j-spring.version}</version>
-        </dependency>
+        </dependency>-->
 
 
     </dependencies>
