@@ -1,4 +1,24 @@
+server:
+  servlet:
+    context-path: /ff4j-server
+  port: 8080
 
+##Sprng settings
+spring:
+  application:
+    name: ff4j-server
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ff4jdb
+    username: danny
+    password: danny
+    name: ff4jdb
+    driver-class-name: org.postgresql.Driver
+
+##FF4J settings
 ff4j:
   api:
     context-path: /api/v1/ff4j     # default '/api/ff4j'
