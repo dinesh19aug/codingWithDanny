@@ -14,6 +14,19 @@ public class User {
     private String role;
     private boolean enabled;
 
+    @OneToOne(mappedBy = "user")
+    private UserRegion userRegion;
+
+    public UserRegion getUserRegion() {
+        return userRegion;
+    }
+
+    public void setUserRegion(UserRegion userRegion) {
+        this.userRegion = userRegion;
+    }
+
+
+
     public String getUsername() {
         return username;
     }

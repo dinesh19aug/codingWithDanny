@@ -1,6 +1,7 @@
 package com.javahabit.d2ccommerceapp.thymeleaf;
 
 import org.ff4j.FF4j;
+import org.ff4j.core.FlippingExecutionContext;
 import org.thymeleaf.context.ITemplateContext;
 import org.thymeleaf.engine.AttributeName;
 import org.thymeleaf.model.IProcessableElementTag;
@@ -24,7 +25,14 @@ public class MyFF4jEnableAttrProcessor extends AbstractStandardConditionalVisibi
         {
             return false;
         }
+        FlippingExecutionContext fex = new FlippingExecutionContext();
+        fex.addValue("clientHostName", getClientIp());
+        fex.addValue("weight", ff4j.getProperty("fiftyPercent"));
+        return ff4j.check(feature, fex);
+    }
 
-        return ff4j.check(feature);
+    private String getClientIp()
+    {
+        return "0.0.0.0";
     }
 }
