@@ -34,7 +34,8 @@ public class BookController {
          List roles =  SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().map(u-> u.getAuthority().substring(5)).collect(Collectors.toList()) ;
          String userName =   SecurityContextHolder.getContext().getAuthentication().getName();
         System.out.println("Show books: " + ff4j.check("show-books"));
-         return "book";
+        ff4j.isAllowed(ff4j.getFeature("show-copyright"));
+        return "book";
 
     }
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:ff4j="http://www.ff4j.org/taglibs/ff4j" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+</head>
+<body>
+<div th:fragment="header">
+  <nav>
+    <div class="nav-wrapper">
+
+            <span ff4j:enable="show-logo">
+                <img src="/bookstore/images/book-logo.jpeg" width="200px" height="100%">
+            </span>
+      <a href="" class="brand-logo center-align">Barney's Book Store</a>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        <li><a href="/bookstore/logout">Log out</a></li>
+        <li><a href="">Account</a></li>
+        <li><a href="">Shopping Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

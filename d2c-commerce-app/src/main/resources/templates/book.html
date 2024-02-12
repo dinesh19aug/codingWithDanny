@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
 <head>
     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
     <title>Barney's</title>
@@ -9,33 +10,14 @@
 </head>
 <body>
 <!-- Header and Logo -->
-<div>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="" class="brand-logo center-align">Barney's Book Store</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/bookstore/logout">Log out</a></li>
-                <li><a href="">Account</a></li>
-                <li><a href="">Shopping Cart</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<div th:replace="fragments/header :: header"/>
 
 <!-- List of Products -->
 <div class="row blue-grey lighten-1">
     <!-- Left bar-->
-    <div class="col s3 ">
-        <div class="row ">
-            <div class="container grey lighten-2">
-                <blockquote>Welcome Dinesh</blockquote>
-            </div>
-        </div>
-
-    </div>
+    <div th:replace="fragments/leftbar :: leftbar"/>
     <!-- Right bar -->
     <div class="col s9">
-
         <table class="striped highlight responsive-table teal lighten-1">
             <thead>
             <tr>
@@ -55,9 +37,10 @@
             </tr>
             </tbody>
         </table>
-
     </div>
 </div>
+
+<div th:replace="fragments/footer :: footer"/>
 
 </body>
 </html>
