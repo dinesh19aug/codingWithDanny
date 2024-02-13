@@ -2,7 +2,6 @@ package com.javahabit.d2ccommerceapp.controller;
 
 import com.javahabit.d2ccommerceapp.service.book.IService;
 import jakarta.servlet.http.HttpServletRequest;
-import org.ff4j.FF4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,26 +18,38 @@ import java.util.stream.Collectors;
 @RequestMapping
 public class BookController {
 
-    final FF4j ff4j;
     IService bookService;
     IService bookUserService;
-    public BookController(@Qualifier("book-service") IService bookService, @Qualifier("book-user-service") IService bookUserService, FF4j ff4j) {
+    IService discountService;
+    public BookController(@Qualifier("book-service") IService bookService,
+                          @Qualifier("book-user-service") IService bookUserService,
+                          @Qualifier("discount-service") IService discountService) {
         this.bookService = bookService;
-        this.ff4j = ff4j;
         this.bookUserService = bookUserService;
+        this.discountService = discountService;
     }
 
     @GetMapping("/book")
     public String getBook( Model model, HttpServletRequest request){
-        List roles =  SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().map(u-> u.getAuthority()).collect(Collectors.toList()) ;
-        String userName =   SecurityContextHolder.getContext().getAuthentication().getName();
+
 
         model.addAttribute("books", bookService.process(null));
-        model.addAttribute("customerName", userName);
-        model.addAttribute("userRole", roles.get(0).toString());
-        model.addAttribute("state", bookUserService.process(userName));
-//        ff4j.isAllowed(ff4j.getFeature("show-copyright"));
+        model.addAttribute("customerName", getUserName());
+        model.addAttribute("userRole", getUserRole());
+        model.addAttribute("state", bookUserService.process(getUserName()));
+        model.addAttribute("discount", discountService.process(null));
         return "book";
+
+    }
+
+    private static String getUserName() {
+        String userName =   SecurityContextHolder.getContext().getAuthentication().getName();
+        return userName;
+    }
+
+    private static String getUserRole() {
+        List roles =  SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().map(u-> u.getAuthority()).collect(Collectors.toList()) ;
+        return roles.get(0).toString();
 
     }
 
@@ -54,23 +65,5 @@ public class BookController {
         return new ModelAndView("redirect:/book", model);
     }
 
-    private String getClientIp(HttpServletRequest request)
-    {
 
-        String remoteAddr = "";
-
-        if (request != null)
-        {
-            remoteAddr = request.getHeader("X-FORWARDED-FOR");
-            System.out.println("X-FORWARDED-FOR : " + remoteAddr);
-            if (remoteAddr == null || "".equals(remoteAddr))
-            {
-                remoteAddr = request.getRemoteAddr();
-
-                System.out.println("Remote Addr : " + remoteAddr);
-            }
-        }
-
-        return remoteAddr;
-    }
 }

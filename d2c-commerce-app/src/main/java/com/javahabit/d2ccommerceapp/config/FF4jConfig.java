@@ -27,7 +27,6 @@ public class FF4jConfig {
     public FlippingExecutionContext getFlippingContext(){
         FlippingExecutionContext fex = new FlippingExecutionContext();
         fex.addValue("clientHostName", getClientIp());
-
         return fex;
     }
     private String getClientIp()
@@ -38,7 +37,6 @@ public class FF4jConfig {
     @Bean
     public FF4j getFF4j() {
         FF4j ff4j = new FF4j();
-
 
         //ff4j.setFeatureStore(new InMemoryFeatureStore());
         ff4j.setFeatureStore(new FeatureStoreSpringJdbc(dataSource));
@@ -71,4 +69,24 @@ public class FF4jConfig {
 
         return dialect;
     }
+
+    /*private String getClientIp(HttpServletRequest request)
+    {
+
+        String remoteAddr = "";
+
+        if (request != null)
+        {
+            remoteAddr = request.getHeader("X-FORWARDED-FOR");
+            System.out.println("X-FORWARDED-FOR : " + remoteAddr);
+            if (remoteAddr == null || "".equals(remoteAddr))
+            {
+                remoteAddr = request.getRemoteAddr();
+
+                System.out.println("Remote Addr : " + remoteAddr);
+            }
+        }
+
+        return remoteAddr;
+    }*/
 }

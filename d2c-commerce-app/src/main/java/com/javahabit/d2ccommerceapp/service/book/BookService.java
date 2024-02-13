@@ -11,18 +11,13 @@ import java.util.List;
 public class BookService implements IService<List<Book>, String>{
     final FF4j ff4j;
 
-
     public BookService(FF4j ff4j) {
         this.ff4j = ff4j;
-
-
     }
-
     @Override
     public  List<Book> process(String optionalValue) {
         return getBookList();
     }
-
 
     private  List<Book> getBookList() {
         Book p1 = new Book(1,"Designing Data-Intensive Applications", BigDecimal.valueOf(22.99), "/images/ddia.jpeg");
@@ -36,15 +31,4 @@ public class BookService implements IService<List<Book>, String>{
         return List.of(p1, p2, p3);
     }
 
-
-
-
-    /*@Override
-    public String getUserState(String userName){
-        Optional<User> user =  userRepository.findByUsername(userName);
-        Long user_id = user.get().getId();
-        UserRegion userRegion = userRegionRepository.findByUser_id(user_id);
-        fex.addValue("region", userRegion.getState());
-        return userRegion.getState();
-    }*/
 }

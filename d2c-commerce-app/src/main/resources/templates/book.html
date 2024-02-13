@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:ff4j="http://www.ff4j.org/taglibs/ff4j"
+      lang="en">
 <head>
     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
     <title>Barney's</title>
@@ -11,7 +13,8 @@
 <body>
 <!-- Header and Logo -->
 <div th:replace="fragments/header :: header"/>
-
+<!-- Dicount bar -->
+<div th:replace="fragments/discount :: discount"/>
 <!-- List of Products -->
 <div class="row blue-grey lighten-1">
     <!-- Left bar-->

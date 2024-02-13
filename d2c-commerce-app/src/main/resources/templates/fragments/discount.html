@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:ff4j="http://www.ff4j.org/taglibs/ff4j"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Discount</title>
+</head>
+<body>
+<div th:fragment="discount" ff4j:enable="showDiscount">
+    <div class="row lime lighten-5">
+        <div class="col s12 center-align">
+            Take <span th:text="${discount.discount}"></span>Off. Use coupon code <span
+                th:text="${discount.couponCode}"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -23,7 +23,10 @@ public class BookUserService implements IService<String, String>{
 
     }
 
-
+    @Override
+    public String process(String userName) {
+        return getUserState(userName);
+    }
     public String getUserState(String userName) {
         Optional<User> user =  userRepository.findByUsername(userName);
         Long user_id = user.get().getId();
@@ -33,8 +36,5 @@ public class BookUserService implements IService<String, String>{
     }
 
 
-    @Override
-    public String process(String userName) {
-        return getUserState(userName);
-    }
+
 }
