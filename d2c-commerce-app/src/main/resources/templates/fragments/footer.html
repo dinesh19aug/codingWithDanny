@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
+<html lang="en"
       xmlns:ff4j="http://www.ff4j.org/taglibs/ff4j"
-      lang="en">
+      xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
@@ -10,14 +10,12 @@
 </head>
 <body>
 <div th:fragment="footer">
-
-    <div class="container">
-        <footer>
-            <!-- this is footer -->
-            <span ff4j:enable="show-copyright">©Dinesh Arora</span> | <span > Developerweek 2024 demo</span> |
- </footer>
-    </div>
-
+    <footer class="page-footer">
+        <div class="container center-align">
+        <!-- this is footer -->
+        <span ff4j:enable="show-copyright">| ©Dinesh Arora </span>  <span>| Developerweek 2024 demo |</span>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

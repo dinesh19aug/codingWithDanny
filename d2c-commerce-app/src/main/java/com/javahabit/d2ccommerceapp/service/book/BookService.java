@@ -6,6 +6,8 @@ import com.javahabit.d2ccommerceapp.vo.Book;
 import com.javahabit.d2ccommerceapp.vo.security.User;
 import com.javahabit.d2ccommerceapp.vo.security.UserRegion;
 import org.ff4j.FF4j;
+import org.ff4j.core.FlippingExecutionContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -17,6 +19,8 @@ public class BookService implements IService{
     final FF4j ff4j;
     private UserRepository userRepository;
     private UserRegionRepository userRegionRepository;
+    @Autowired
+    FlippingExecutionContext fex;
     public BookService(FF4j ff4j, UserRepository userRepository, UserRegionRepository userRegionRepository) {
         this.ff4j = ff4j;
         this.userRepository=userRepository;
@@ -26,6 +30,7 @@ public class BookService implements IService{
 
     @Override
     public  List<Book> apply() {
+
         return getBookList();
 
     }
@@ -47,6 +52,7 @@ public class BookService implements IService{
         Optional<User> user =  userRepository.findByUsername(userName);
         Long user_id = user.get().getId();
         UserRegion userRegion = userRegionRepository.findByUser_id(user_id);
+        fex.addValue("region", userRegion.getState());
         return userRegion.getState();
     }
 }

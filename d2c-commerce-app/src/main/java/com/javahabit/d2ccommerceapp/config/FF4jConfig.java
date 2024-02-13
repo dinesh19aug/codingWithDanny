@@ -2,6 +2,7 @@ package com.javahabit.d2ccommerceapp.config;
 
 import com.javahabit.d2ccommerceapp.thymeleaf.MyFF4JDialect;
 import org.ff4j.FF4j;
+import org.ff4j.core.FlippingExecutionContext;
 import org.ff4j.security.SpringSecurityAuthorisationManager;
 import org.ff4j.springjdbc.store.EventRepositorySpringJdbc;
 import org.ff4j.springjdbc.store.FeatureStoreSpringJdbc;
@@ -19,9 +20,20 @@ public class FF4jConfig {
 
     public FF4jConfig(@Qualifier("ff4j-ds") DataSource dataSource) {
         this.dataSource = dataSource;
+
     }
 
+    @Bean
+    public FlippingExecutionContext getFlippingContext(){
+        FlippingExecutionContext fex = new FlippingExecutionContext();
+        fex.addValue("clientHostName", getClientIp());
 
+        return fex;
+    }
+    private String getClientIp()
+    {
+        return "0.0.0.0";
+    }
 
     @Bean
     public FF4j getFF4j() {
@@ -55,6 +67,7 @@ public class FF4jConfig {
     {
         MyFF4JDialect dialect = new MyFF4JDialect();
         dialect.setFF4J(getFF4j());
+        dialect.setFex(getFlippingContext());
 
         return dialect;
     }

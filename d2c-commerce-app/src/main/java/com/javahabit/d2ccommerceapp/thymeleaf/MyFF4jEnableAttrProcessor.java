@@ -8,13 +8,16 @@ import org.thymeleaf.model.IProcessableElementTag;
 import org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor;
 import org.thymeleaf.templatemode.TemplateMode;
 
+
 public class MyFF4jEnableAttrProcessor extends AbstractStandardConditionalVisibilityTagProcessor {
     private FF4j ff4j;
+    private FlippingExecutionContext fex;
 
-    protected MyFF4jEnableAttrProcessor(final String dialectPrefix, FF4j ff4j)
+    protected MyFF4jEnableAttrProcessor(final String dialectPrefix, FF4j ff4j, FlippingExecutionContext fex)
     {
         super(TemplateMode.HTML, dialectPrefix, "enable", 11);
         this.ff4j = ff4j;
+        this.fex = fex;
     }
 
     @Override
@@ -25,9 +28,6 @@ public class MyFF4jEnableAttrProcessor extends AbstractStandardConditionalVisibi
         {
             return false;
         }
-        FlippingExecutionContext fex = new FlippingExecutionContext();
-        fex.addValue("clientHostName", getClientIp());
-        fex.addValue("weight", ff4j.getProperty("fiftyPercent"));
         return ff4j.check(feature, fex);
     }
 

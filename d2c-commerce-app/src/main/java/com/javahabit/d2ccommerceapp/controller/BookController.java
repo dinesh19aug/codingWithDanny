@@ -3,9 +3,6 @@ package com.javahabit.d2ccommerceapp.controller;
 import com.javahabit.d2ccommerceapp.service.book.IService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.ff4j.FF4j;
-import org.ff4j.core.FlippingExecutionContext;
-import org.ff4j.core.FlippingStrategy;
-import org.ff4j.strategy.ClientFilterStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -42,10 +39,10 @@ public class BookController {
         model.addAttribute("state", bookService.getUserState(userName));
         //System.out.println("Show books: " + ff4j.check("show-books"));
         ff4j.isAllowed(ff4j.getFeature("show-copyright"));
-        FlippingStrategy flippingStrategy = new ClientFilterStrategy();
-        FlippingExecutionContext fex = new FlippingExecutionContext();
+
+        /*FlippingExecutionContext fex = new FlippingExecutionContext();
         fex.addValue("clientHostName", getClientIp(request));
-        fex.addValue("weight", ff4j.getProperty("fiftyPercent"));
+        fex.addValue("weight", ff4j.getProperty("fiftyPercent"));*/
         return "book";
 
     }
