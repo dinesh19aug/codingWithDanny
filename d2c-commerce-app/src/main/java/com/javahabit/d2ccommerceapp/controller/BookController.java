@@ -3,7 +3,6 @@ package com.javahabit.d2ccommerceapp.controller;
 import com.javahabit.d2ccommerceapp.service.book.IService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.ff4j.FF4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -20,29 +19,25 @@ import java.util.stream.Collectors;
 @RequestMapping
 public class BookController {
 
-    @Autowired
-    FF4j ff4j;
-    @Qualifier("book-service")
+    final FF4j ff4j;
     IService bookService;
-    public BookController(IService bookService) {
+    IService bookUserService;
+    public BookController(@Qualifier("book-service") IService bookService, @Qualifier("book-user-service") IService bookUserService, FF4j ff4j) {
         this.bookService = bookService;
+        this.ff4j = ff4j;
+        this.bookUserService = bookUserService;
     }
 
     @GetMapping("/book")
     public String getBook( Model model, HttpServletRequest request){
-        model.addAttribute("books", bookService.apply());
-
         List roles =  SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().map(u-> u.getAuthority()).collect(Collectors.toList()) ;
         String userName =   SecurityContextHolder.getContext().getAuthentication().getName();
+
+        model.addAttribute("books", bookService.process(null));
         model.addAttribute("customerName", userName);
         model.addAttribute("userRole", roles.get(0).toString());
-        model.addAttribute("state", bookService.getUserState(userName));
-        //System.out.println("Show books: " + ff4j.check("show-books"));
-        ff4j.isAllowed(ff4j.getFeature("show-copyright"));
-
-        /*FlippingExecutionContext fex = new FlippingExecutionContext();
-        fex.addValue("clientHostName", getClientIp(request));
-        fex.addValue("weight", ff4j.getProperty("fiftyPercent"));*/
+        model.addAttribute("state", bookUserService.process(userName));
+//        ff4j.isAllowed(ff4j.getFeature("show-copyright"));
         return "book";
 
     }
