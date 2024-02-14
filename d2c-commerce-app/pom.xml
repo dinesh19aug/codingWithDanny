@@ -26,6 +26,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -38,12 +44,7 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-docker-compose</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -77,11 +78,16 @@
             <artifactId>ff4j-security-spring</artifactId>
             <version>${ff4j-spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.ff4j</groupId>
             <artifactId>ff4j-aop</artifactId>
             <version>${ff4j-spring.version}</version>
         </dependency>
+
+
+
+
     </dependencies>
 
     <build>

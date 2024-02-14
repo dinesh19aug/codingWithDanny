@@ -8,7 +8,7 @@ spring:
     name: bookstore
   ##Databse
   jpa:
-    show-sql: true
+    show-sql: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update

@@ -7,17 +7,20 @@
 </head>
 <body>
 <div th:fragment="leftbar" class="col s3 ">
-  <div class="row ">
-      <div class="container grey lighten-2">
-          <blockquote>Welcome <span th:text="${customerName}" ></span></blockquote>
-      </div>
-      <div class="container grey lighten-2">
-          <blockquote>Role: <span th:text="${userRole}" ></span></blockquote>
-          <blockquote>State: <span th:text="${state}" ></span></blockquote>
-      </div>
-
-  </div>
-
+    <div class="row ">
+        <div class="container grey lighten-2">
+            <blockquote>Welcome <span th:text="${customerName}"></span></blockquote>
+        </div>
+        <div class="container grey lighten-2">
+            <blockquote>Role: <span th:text="${userRole}"></span></blockquote>
+            <blockquote>State: <span th:text="${state}"></span></blockquote>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <span class="waves-effect waves-light btn-small" th:text="${giveaway}">giveaway</span>
+        </div>
+    </div>
 </div>
 </body>
 </html>

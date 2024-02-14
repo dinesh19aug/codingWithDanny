@@ -1,7 +1,8 @@
 package com.javahabit.d2ccommerceapp.controller;
 
+import com.javahabit.d2ccommerceapp.service.book.IGiveaway;
 import com.javahabit.d2ccommerceapp.service.book.IService;
-import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -18,26 +19,30 @@ import java.util.stream.Collectors;
 @RequestMapping
 public class BookController {
 
-    IService bookService;
+    IService<?,?> bookService;
     IService bookUserService;
-    IService discountService;
-    public BookController(@Qualifier("book-service") IService bookService,
-                          @Qualifier("book-user-service") IService bookUserService,
-                          @Qualifier("discount-service") IService discountService) {
+    IService<?,?> discountService;
+    @Autowired
+    @Qualifier("giveaway-monthly")
+    IGiveaway giveawayService;
+    public BookController(@Qualifier("book-service") IService<?,?> bookService,
+                          @Qualifier("book-user-service") IService<?, ?> bookUserService,
+                          @Qualifier("discount-service") IService<?, ?> discountService
+                          ) {
         this.bookService = bookService;
         this.bookUserService = bookUserService;
         this.discountService = discountService;
+
     }
 
     @GetMapping("/book")
-    public String getBook( Model model, HttpServletRequest request){
-
-
+    public String getBook( Model model){
         model.addAttribute("books", bookService.process(null));
         model.addAttribute("customerName", getUserName());
         model.addAttribute("userRole", getUserRole());
         model.addAttribute("state", bookUserService.process(getUserName()));
         model.addAttribute("discount", discountService.process(null));
+        model.addAttribute("giveaway", giveawayService.giveAwayMsg());
         return "book";
 
     }

@@ -12,13 +12,13 @@
 </head>
 <body>
 <!-- Header and Logo -->
-<div th:replace="fragments/header :: header"/>
+<div th:replace="~{fragments/header :: header}"/>
 <!-- Dicount bar -->
-<div th:replace="fragments/discount :: discount"/>
+<div th:replace="~{fragments/discount :: discount}"/>
 <!-- List of Products -->
 <div class="row blue-grey lighten-1">
     <!-- Left bar-->
-    <div th:replace="fragments/leftbar :: leftbar"/>
+    <div th:replace="~{fragments/leftbar :: leftbar}"/>
     <!-- Right bar -->
     <div class="col s9">
         <table class="striped highlight responsive-table teal lighten-1">
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-<div th:replace="fragments/footer :: footer"/>
+<div th:replace="~{fragments/footer :: footer}"/>
 
 </body>
 </html>
