@@ -31,9 +31,9 @@ ff4j:
     enabled: true                  # default 'false'
 springdoc:
   swagger-ui:
-    #tags-sorter: "alpha"
-    #operations-sorter: "alpha"
-  #group-configs:
-    #- group: "root"
-      #pathsToMatch: "/**"
-      #packagesToScan: "org.ff4j.spring.boot.starter.webmvc.sample.rest"
+    tags-sorter: "alpha"
+    operations-sorter: "alpha"
+  group-configs:
+    - group: "root"
+      pathsToMatch: "/**"
+      packagesToScan: "org.ff4j.spring.boot.starter.webmvc.sample.rest"

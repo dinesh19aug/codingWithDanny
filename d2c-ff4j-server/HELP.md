@@ -62,3 +62,7 @@ CREATE TABLE FF4J_AUDIT (
 );
 
 ```
+
+Important URLS:
+Swagger - http://localhost:8080/ff4j-server/swagger-ui/index.html 
+Dashboard: http://localhost:8080/ff4j-server/ff4j-web/home
