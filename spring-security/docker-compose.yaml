@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: local_pgdb
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: codingwithdanny
+      POSTGRES_USER: scott
+      POSTGRES_PASSWORD: tiger
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
+      interval: 1s
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "5051:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: danny@javahabit.com
+      PGADMIN_DEFAULT_PASSWORD: danny
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    network_mode: bridge
+
+
+networks:
+  todo-network:
+    driver: bridge
+volumes:
+  local_pgdata:
+  pgadmin-data:

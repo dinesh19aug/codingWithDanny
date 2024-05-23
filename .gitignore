@@ -3,3 +3,6 @@
 .idea/**
 .idea
 .DS_Store
+/spring-security/.gradle/
+/spring-security/.idea/
+/spring-security/build/
