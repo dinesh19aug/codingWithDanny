@@ -18,3 +18,8 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
     show-sql: true
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
