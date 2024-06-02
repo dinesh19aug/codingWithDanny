@@ -8,7 +8,6 @@ CREATE TABLE users (
                        enabled BOOLEAN NOT NULL
 );
 
-
 -- Create the authorities table
 CREATE TABLE authorities (
                              username CITEXT NOT NULL,

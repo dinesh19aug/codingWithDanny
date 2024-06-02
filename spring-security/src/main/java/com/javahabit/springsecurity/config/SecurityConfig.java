@@ -33,22 +33,35 @@ public class SecurityConfig {
          * BasicAuthenticationFilter Added by HttpSecurity#httpBasic
          * AuthorizationFilter Added by HttpSecurity#authorizationHttpRequests
          */
+        /*http.csrf(Customizer.withDefaults())
+                .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+                .httpBasic(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults())
+        ;*/
 
-        http
-                //Not required for REST API or machine to machine transaction. Use it for Web based apps
-                .csrf(csrf -> csrf.disable())
-                //.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+        /*http.csrf(Customizer.withDefaults())
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/hello").permitAll()
+
+                        .anyRequest().authenticated())
+                .httpBasic(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults())
+        ;*/
+        http.csrf(Customizer.withDefaults())
+
+            .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/hello").permitAll()
                         .requestMatchers(HttpMethod.GET,"/employee").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.GET,"/employee/**").hasRole("EMPLOYEE")
                         .requestMatchers(HttpMethod.POST,"/employee").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.PUT,"/employee").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.DELETE,"/employee/**").hasRole("ADMIN")
-                        .anyRequest().authenticated()).csrf(csrf-> csrf.disable())
-                .httpBasic(Customizer.withDefaults())
-                .formLogin(Customizer.withDefaults())
-                .exceptionHandling(exception -> exception.authenticationEntryPoint(customAuthenticationEntryPoint()))
+                        .anyRequest().authenticated())
+
+
+                    .httpBasic(Customizer.withDefaults())
+                    .formLogin(Customizer.withDefaults());
+                //.exceptionHandling(exception -> exception.authenticationEntryPoint(customAuthenticationEntryPoint()))
 
         ;
 
@@ -63,33 +76,33 @@ public class SecurityConfig {
                 .username("mary")
                 //{noop} is prefix used in password configuration to indicate that the password is stored in plain text and no encoding or hashing should be applied. This is typically used for testing or demonstration purposes and should not be used in production environments due to security risks.
                 .password("{noop}mary")
-                .roles("employee", "manager", "admin")
+                .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
 
         UserDetails john = User.builder()
                 .username("john")
                 .password("{noop}john")
-                .roles("employee")
+                .roles("EMPLOYEE")
                 .build();
 
         UserDetails larry = User.builder()
                 .username("larry")
                 .password("{noop}larry")
-                .roles("employee", "manager")
+                .roles("EMPLOYEE", "MANAGER")
                 .build();
 
         return new InMemoryUserDetailsManager(mary,john,larry);*/
         //return new JdbcUserDetailsManager(dataSource);
         JdbcUserDetailsManager manager = new JdbcUserDetailsManager(dataSource);
-        manager.setUsersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?");
-        manager.setAuthoritiesByUsernameQuery("SELECT username, authority FROM authorities WHERE username = ?");
+        manager.setUsersByUsernameQuery("SELECT user_id, password, active FROM members WHERE user_id = ?");
+        manager.setAuthoritiesByUsernameQuery("SELECT user_id, role FROM roles WHERE user_id = ?");
         return manager;
     }
 
-    @Bean
+    /*@Bean
     public CustomAuthenticationEntryPoint customAuthenticationEntryPoint() {
         return new CustomAuthenticationEntryPoint();
-    }
+    }*/
 
     @Bean
     public PasswordEncoder passwordEncoder() {
