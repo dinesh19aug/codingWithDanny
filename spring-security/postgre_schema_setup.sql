@@ -17,6 +17,7 @@ CREATE TABLE authorities (
 
 
 -- Insert into users table
+
 INSERT INTO users (username, password, enabled) VALUES ('mary', '{noop}mary', true);
 INSERT INTO users (username, password, enabled) VALUES ('john', '{noop}john', true);
 INSERT INTO users (username, password, enabled) VALUES ('larry', '{noop}larry', true);

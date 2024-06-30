@@ -1,27 +1,36 @@
 package com.javahabit.springsecurity.config;
 
+import com.javahabit.springsecurity.jwt.AuthTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 
     private final DataSource dataSource;
+    private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
-    public SecurityConfig(DataSource dataSource) {
+    public SecurityConfig(DataSource dataSource, CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
         this.dataSource = dataSource;
+        this.customAuthenticationEntryPoint = customAuthenticationEntryPoint;
+
     }
 
     @Bean
@@ -47,27 +56,19 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults())
         ;*/
-        http.csrf(Customizer.withDefaults())
-
+        http.csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/hello").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/employee").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.GET,"/employee/**").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.POST,"/employee").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.PUT,"/employee").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.DELETE,"/employee/**").hasRole("ADMIN")
+                        .requestMatchers("/authenticate").permitAll()
                         .anyRequest().authenticated())
 
-
                     .httpBasic(Customizer.withDefaults())
-                    .formLogin(Customizer.withDefaults());
-                //.exceptionHandling(exception -> exception.authenticationEntryPoint(customAuthenticationEntryPoint()))
-
-        ;
+                    .formLogin(Customizer.withDefaults())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .exceptionHandling(exception -> exception.authenticationEntryPoint(customAuthenticationEntryPoint))
+                .addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
-
-
     }
 
     @Bean
@@ -99,14 +100,21 @@ public class SecurityConfig {
         return manager;
     }
 
-    /*@Bean
-    public CustomAuthenticationEntryPoint customAuthenticationEntryPoint() {
-        return new CustomAuthenticationEntryPoint();
-    }*/
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthTokenFilter authTokenFilter(){
+        return new AuthTokenFilter();
+    }
+
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
     }
 }
 

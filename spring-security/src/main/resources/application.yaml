@@ -18,6 +18,9 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
     show-sql: true
+  app:
+    jwtSecret: sahdkjy97hjakbshd9jaksbd97y732bkewdy9hssambnk
+    jwtExpirationInMs: 30000
 logging:
   level:
     org:

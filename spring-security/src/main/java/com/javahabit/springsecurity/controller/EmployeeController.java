@@ -5,12 +5,12 @@ import com.javahabit.springsecurity.service.IService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-
 public class EmployeeController {
 
     private IService employeeService;
@@ -29,6 +29,7 @@ public class EmployeeController {
 
 
     @GetMapping("/employee")
+    @PreAuthorize("hasAnyRole('EMPLOYEE', 'MANAGER', 'ADMIN')")
     public List<Employee> findAll() {
         return employeeService.findAll();
     }
@@ -36,6 +37,7 @@ public class EmployeeController {
     
 
     @GetMapping("/employee/{employeeId}")
+    @PreAuthorize("hasAnyRole('EMPLOYEE', 'MANAGER', 'ADMIN')")
     public Employee getEmployee(@PathVariable int employeeId) {
         Employee employee = employeeService.findById(employeeId);
         if (employee == null) {
@@ -47,6 +49,7 @@ public class EmployeeController {
    
 
     @PostMapping("/employee")
+    @PreAuthorize("hasAnyRole( 'MANAGER', 'ADMIN')")
     public Employee addEmployee(@RequestBody Employee employee) {
         //employee.setId(0);
         Employee dbEmployee = employeeService.save(employee);
@@ -55,6 +58,7 @@ public class EmployeeController {
 
 
     @PutMapping("/employee")
+    @PreAuthorize("hasAnyRole( 'MANAGER', 'ADMIN')")
     public Employee updateEmployee(@RequestBody Employee employee) {
         Employee dbEmployee = employeeService.save(employee);
         return dbEmployee;
@@ -62,6 +66,7 @@ public class EmployeeController {
 
 
     @DeleteMapping("/employee/{employeeId}")
+    @PreAuthorize("hasAnyRole( 'ADMIN')")
     public String deleteEmployee(@PathVariable int employeeId) {
         Employee tempEmployee = employeeService.findById(employeeId);
         if (tempEmployee == null) {
