@@ -1,0 +1,35 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+  application:
+    name: spring-socialauth
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23li8DQ357MGeIkvmc
+            client-secret: 65f4d6772682645eea21b9eb2c282815224ae59b
+
+            redirect-uri: http://localhost:3000/socialauth/login/oauth2/code/github
+            client-name: Github
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize?prompt=consent
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+
+
+server:
+  port: 3000
+  servlet:
+    context-path: "/socialauth"
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
